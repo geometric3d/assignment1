@@ -10,13 +10,13 @@
 Your goal in this question is to generate affinely correct warps for images that are captured through perspective cameras (assume pinhole camera model), with annotations of at least 2 pairs of parallel lines.
 
 **Dataset Preparation**
- 1. Find (or capture) `3` images. Ideally capture images that have sufficient perspective. Check the following example:
+ 1. Find (or capture) `2` images. Ideally capture images that have sufficient perspective. Check the following example:
 
     | Good Input  | Bad Input |
     | ----------- | ----------- |
     |  <img src="figures/good.jpg" height="200">  | <img src="figures/bad.jpg" height="200"> |
 
-  * Run your code on at least `7` images provided in the `data/q1` folder as well as *on the images you captured* (`10` images in total).
+  * Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total).
 
 **Submission**
 1. Input Images
@@ -45,8 +45,8 @@ Your goal in this question is to generate affinely correct warps for images that
 Your goal in this question is to generate metrically correct warps for images that are captured through perspective cameras (assume pinhole camera model), with annotations of at least 2 pairs of perpendicular lines, based on your result from Q1.
 
 **Dataset Preparation**
- 1. Find (or capture) `3` images. Ideally capture images that have sufficient perspective.
- 2. Run your code on at least `7` images provided in the `data/q1` folder as well as *on the images you captured* (`10` images in total).
+ 1. Find (or capture) `2` images. Ideally capture images that have sufficient perspective.
+ 2. Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total).
 
 **Submission**
 1. Input Images
@@ -93,8 +93,8 @@ Your goal in this question is to estimate homographies between two images using 
 In Q2, we generate metrically correct warps of images with annotations of 2 pairs of perpendicular lines based on the result from Q1. In this question, the goal is to metric-rectify the image directly from at least 5 pairs of perpendicular lines. Note you can use more than 5 pairs to get more accurate results.
 
 **Dataset Preparation**
- 1. Find (or capture) `3` images. Ideally capture images that have sufficient perspective.
- 2. Run your code on at least `7` images provided in the `data/q1` folder as well as *on the images you captured*.
+ 1. Find (or capture) `2` images. Ideally capture images that have sufficient perspective.
+ 2. Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total).
 
 **Submission**
 1. Input Images
