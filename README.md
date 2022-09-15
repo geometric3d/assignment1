@@ -1,8 +1,8 @@
 # HW1: Projective Geometry and Homography
 
 ## Instructions
-* Late Submission Policy: See the late submission policy [here](https://geometric3d.github.io/pages/assignments.html).
-* Submitting your work: Check the instructions for submission [here](https://geometric3d.github.io/pages/assignments.html).
+* Late Submission Policy: See the late submission policy [here](https://geometric3d.github.io/pages/assignments/hw0.html).
+* Submitting your work: Check the instructions for submission [here](https://geometric3d.github.io/pages/assignments/hw0.html).
 * There are `5` questions in this assignment, where the last `2` are bonus questions. Make sure you follow the instructions and submit the answers as required.
 
 
