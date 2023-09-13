@@ -1,8 +1,8 @@
 # HW1: Projective Geometry and Homography
 
 ## Instructions
-* Late Submission Policy: See the late submission policy [here](https://geometric3d.github.io/pages/assignments/hw0.html).
-* Submitting your work: Check the instructions for submission [here](https://geometric3d.github.io/pages/assignments/hw0.html).
+* Late Submission Policy: See the late submission policy [here](https://geometric3d.github.io/pages/assignments.html).
+* Submitting your work: Check the instructions for submission [here](https://geometric3d.github.io/pages/assignments.html).
 * There are `5` questions in this assignment, where the last `2` are bonus questions. Make sure you follow the instructions and submit the answers as required.
 
 
@@ -16,7 +16,14 @@ Your goal in this question is to generate affinely correct warps for images that
     | ----------- | ----------- |
     |  <img src="figures/good.jpg" height="200">  | <img src="figures/bad.jpg" height="200"> |
 
-  * Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total).
+  * Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total). We have provided parallel line annotation for each of them in `annotation/q1_annotation.npy` with an array of `16 x 2` for each image. Each consecutive point represents a line and each consecutive pair of line is parallel. We provide total 8 lines out of which last 4 are held-out lines for Q1.3. 
+  Example code to read the annotation: 
+
+  ```python
+    with open('q1_annotation.npy','rb') as f:
+        q1_annotation = np.load(f, allow_pickle=True)
+    points = q1_annotation.item().get('book1')
+  ```
 
 **Submission**
 1. Input Images
@@ -31,8 +38,8 @@ Your goal in this question is to generate affinely correct warps for images that
 
     | Before      | After |
     | ----------- | ----------- |
-    | 0.7274    | 0.9979    |
-    | 0.9998     | 0.9998    |
+    | 0.7842    | -0.9999    |
+    | -0.9999     | 0.9999    |
 
 
     | Test lines on Input Image     | Test lines on Affine-Rectified Image |
@@ -46,7 +53,7 @@ Your goal in this question is to generate metrically correct warps for images th
 
 **Dataset Preparation**
  1. Find (or capture) `2` images. Ideally capture images that have sufficient perspective.
- 2. Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total).
+ 2. Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total). We have provided perpendicular line annotation for each of them in `annotation/q2_annotation.npy` with an array of `16 x 2` for each image. Each consecutive point represents a line and each consecutive pair of line is perpendicular. We provide total 8 lines out of which last 4 are held-out lines for Q2.3.  The format is same as `annotation/q1_annotation.npy`. 
 
 **Submission**
 1. Input Images
@@ -60,8 +67,8 @@ Your goal in this question is to generate metrically correct warps for images th
 
     | Before      | After |
     | ----------- | ----------- |
-    | -0.15073    | -0.00624    |
-    | 0.10344     | 0.004659    |
+    | -0.66858    | -0.04479    |
+    | 0.02118     | -0.00964    |
 
 
     | Test lines on Input Image     | Test lines on Metric-Rectified Image |
@@ -78,7 +85,7 @@ Your goal in this question is to estimate homographies between two images using 
     | Normal Image | Perspective Image |
     | ----------- | ----------- |
     |  <img src="figures/desk-normal.png" height="150">  | <img src="figures/desk-perspective.png" height="150">  |
- 2. Run your code on the pair of images provided in the `data/q3` folder as well as `1` additional pair of images that you captured. 
+ 2. Run your code on the pair of images provided in the `data/q3` folder as well as `1` additional pair of images that you captured. We have provided annotation of the four corner points in `desk-perspective.png` (in anti-clockwise order) in `annotation/q3_annotation.npy`. The format is same as `annotation/q1_annotation.npy`. 
 
 **Submission**
 1. Input Images
@@ -89,12 +96,12 @@ Your goal in this question is to estimate homographies between two images using 
     |  <img src="figures/desk-normal.png" height="150">  | <img src="figures/desk-perspective.png" height="150">  |  <img src="figures/desk-corners.png" height="150">  | <img src="figures/desk-homography.png" height="150"> |
 3. Biref description of your implementation (i.e., the algorithm followed with relevant equations and what annotations were used).
 
-## Q4: Bonus 1 (10 points)
+## Q4: Bonus: Metric Rectification from Perpendicular Lines (10 points)
 In Q2, we generate metrically correct warps of images with annotations of 2 pairs of perpendicular lines based on the result from Q1. In this question, the goal is to metric-rectify the image directly from at least 5 pairs of perpendicular lines. Note you can use more than 5 pairs to get more accurate results.
 
 **Dataset Preparation**
- 1. Find (or capture) `2` images. Ideally capture images that have sufficient perspective.
- 2. Run your code on at least `3` images provided in the `data/q1` folder as well as *on the images you captured* (`5` images in total).
+ 1. Find (or capture) at least `1` image. Ideally capture an image that has sufficient perspective.
+ 2. Run your code on at least `1` image provided in the `data/q1` folder as well as *on the images you captured*.
 
 **Submission**
 1. Input Images
@@ -106,7 +113,7 @@ In Q2, we generate metrically correct warps of images with annotations of 2 pair
 3. Angles (more precisely, the cosines) of at least 3 pairs of perpendicular lines before and after rectification.
 4. Biref description of your implementation.
 
-## Q5: Bonus 2 (10 points)
+## Q5: Bonus: More Planar Homography from Point Correspondences (10 points)
 Try to be creative and do something fun!
 
 For example, in Q3, we attempt to overlay a normal image on top of an image with perspective effect. You can try to overlay multiple ($\ge 3$) normal images on top of the image with perspective effect:
@@ -129,6 +136,7 @@ For example, in Q3, we attempt to overlay a normal image on top of an image with
 * Use any predefined routines except linear algebra functions, image interpolation, and image warping.
   
 ## Tips
+* You can use the `annotate` function provided in `utils.py` to annotate your own image. It will save the click coordinates and return it as an array.  
 * It is a good idea to `assert` with sanity checks regularly during debugging.
 * Normalize point and line coordinates.
 * Pick the parallel and perpendicular lines carefully.
