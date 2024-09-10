@@ -1,10 +1,8 @@
 # HW1: Projective Geometry and Homography
 
 ## Instructions
-* Late Submission Policy: See the late submission policy [here](https://geometric3d.github.io/assignments.html).
-* Submitting your work: Check the instructions for submission [here](https://geometric3d.github.io/assignments.html).
+* Submitting your work: Check the instructions for submission and the late submission policy [here](https://geometric3d.github.io/submission.html).
 * There are `5` questions in this assignment, where the last `2` are bonus questions. Make sure you follow the instructions and submit the answers as required.
-
 
 ## Q1: Affine Rectification (30 points)
 Your goal in this question is to generate affinely correct warps for images that are captured through perspective cameras (assume pinhole camera model), with annotations of at least 2 pairs of parallel lines.
