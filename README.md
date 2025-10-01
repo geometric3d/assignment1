@@ -83,7 +83,7 @@ Your goal in this question is to estimate homographies between two images using 
     | Normal Image | Perspective Image |
     | ----------- | ----------- |
     |  <img src="figures/desk-normal.png" height="150">  | <img src="figures/desk-perspective.png" height="150">  |
- 2. Run your code on the pair of images provided in the `data/q3` folder as well as `1` additional pair of images that you captured. We have provided annotation of the four corner points in `desk-perspective.png` (in anti-clockwise order) in `annotation/q3_annotation.npy`. The format is same as `annotation/q1_annotation.npy`. 
+ 2. Run your code on the pair of images provided in the `data/q3` folder as well as `1` additional pair of images that you captured. We have provided annotation of the four corner points in `desk-perspective.png` (in **clockwise** order) in `annotation/q3_annotation.npy`. The format is same as `annotation/q1_annotation.npy`. 
 
 **Submission**
 1. Input Images
